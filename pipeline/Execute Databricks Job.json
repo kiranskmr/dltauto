@@ -1,0 +1,28 @@
+{
+	"name": "Execute Databricks Job",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Run Job",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"jobId": "796104578175513",
+						"DatabricksWorkspaceID": "adb-984752964297111.11",
+						"WaitSeconds": 30
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-01-24T12:54:59Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
