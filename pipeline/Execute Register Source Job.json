@@ -1,22 +1,25 @@
 {
-	"name": "Execute Run Job DLT",
+	"name": "Execute Register Source Job",
 	"properties": {
 		"activities": [
 			{
-				"name": "Execute Pipeline1",
+				"name": "Execute Register Source Job",
 				"type": "ExecutePipeline",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "Run Job DLT",
+						"referenceName": "Register Source Job",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true,
 					"parameters": {
-						"jobId": "796104578175513",
+						"jobId": "1006038069263602",
 						"DatabricksWorkspaceID": "adb-984752964297111.11",
-						"WaitSeconds": 30
+						"WaitSeconds": 30,
+						"ConfigLocation": "/dbfs/FileStore/kiran/metadataecc14.yaml",
+						"System": "Ecc14",
+						"Pool": "1207-120054-bean4-pool-eoo0gntr"
 					}
 				}
 			}

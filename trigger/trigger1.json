@@ -6,7 +6,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "Execute Databricks Job",
+					"referenceName": "Execute Run Job DLT",
 					"type": "PipelineReference"
 				}
 			}
