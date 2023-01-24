@@ -82,7 +82,7 @@
 							"notebookPath": "/Users/kiran.sreekumar@databricks.com/hei/dlt_api",
 							"baseParameters": {
 								"configlocation": "/dbfs/FileStore/kiran/metadataecc14.yaml",
-								"system": "ecc14",
+								"system": "ecctest",
 								"pool": "1207-120054-bean4-pool-eoo0gntr"
 							}
 						},
