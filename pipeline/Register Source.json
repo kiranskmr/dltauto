@@ -15,6 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"notebookPath": "/Users/kiran.sreekumar@databricks.com/hei/dlt_api",
 					"baseParameters": {
 						"configlocation": "/dbfs/FileStore/kiran/metadataecc14.yaml",
 						"system": "ecc14",
