@@ -21,7 +21,46 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/Execute Databricks Job')]",
+			"name": "[concat(parameters('factoryName'), '/Execute Register Source Job')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Execute Register Source Job",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "Register Source Job",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {
+								"jobId": "1006038069263602",
+								"DatabricksWorkspaceID": "adb-984752964297111.11",
+								"WaitSeconds": 30,
+								"ConfigLocation": "/dbfs/FileStore/kiran/metadataecc14.yaml",
+								"System": "Ecc14",
+								"Pool": "1207-120054-bean4-pool-eoo0gntr"
+							}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": [],
+				"lastPublishTime": "2023-01-24T12:54:59Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/Register Source Job')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Execute Run Job DLT')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -55,6 +94,163 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/Run Job DLT')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Register Source Job')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Execute Register Source",
+						"type": "WebActivity",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": {
+								"value": "@concat('https://',pipeline().parameters.DatabricksWorkspaceID,'.azuredatabricks.net/api/2.1/jobs/run-now')",
+								"type": "Expression"
+							},
+							"method": "POST",
+							"headers": {},
+							"body": {
+								"value": "@concat('{\"job_id\":',pipeline().parameters.JobID,'}','{\"ConfigLocation\":',pipeline().parameters.ConfigLocation,'}','{\"Pool\":',pipeline().parameters.pool,'}','{\"System\":',pipeline().parameters.System,'}')\n\n\n",
+								"type": "Expression"
+							},
+							"authentication": {
+								"type": "MSI",
+								"resource": "2ff814a6-3304-4ab8-85cb-cd0e6f879c1d"
+							}
+						}
+					},
+					{
+						"name": "Until1",
+						"type": "Until",
+						"dependsOn": [
+							{
+								"activity": "Execute Register Source",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"expression": {
+								"value": "@not(equals(variables('JobStatus'),'Running'))",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "Check Job Run API",
+									"type": "WebActivity",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "0.12:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"url": {
+											"value": "@concat('https://',pipeline().parameters.DatabricksWorkspaceID,'.azuredatabricks.net/api/2.1/jobs/runs/get?run_id=',activity('Execute Register Source').output.run_id)",
+											"type": "Expression"
+										},
+										"method": "GET",
+										"headers": {},
+										"authentication": {
+											"type": "MSI",
+											"resource": "2ff814a6-3304-4ab8-85cb-cd0e6f879c1d"
+										}
+									}
+								},
+								{
+									"name": "Set Job Status",
+									"type": "SetVariable",
+									"dependsOn": [
+										{
+											"activity": "Check Job Run API",
+											"dependencyConditions": [
+												"Succeeded"
+											]
+										}
+									],
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "jobStatus",
+										"value": {
+											"value": "@if(\nor(\nequals(activity('Check Job Run API').output.state.life_cycle_state, 'PENDING'), equals(activity('Check Job Run API').output.state.life_cycle_state, 'RUNNING')\n),\n'Running',\nactivity('Check Job Run API').output.state.result_state\n)",
+											"type": "Expression"
+										}
+									}
+								},
+								{
+									"name": "Wait to Recheck API",
+									"type": "Wait",
+									"dependsOn": [
+										{
+											"activity": "Set Job Status",
+											"dependencyConditions": [
+												"Succeeded"
+											]
+										}
+									],
+									"userProperties": [],
+									"typeProperties": {
+										"waitTimeInSeconds": {
+											"value": "@pipeline().parameters.WaitSeconds",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"timeout": "0.12:00:00"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"parameters": {
+					"jobId": {
+						"type": "string"
+					},
+					"DatabricksWorkspaceID": {
+						"type": "string"
+					},
+					"WaitSeconds": {
+						"type": "int"
+					},
+					"ConfigLocation": {
+						"type": "string"
+					},
+					"System": {
+						"type": "string"
+					},
+					"Pool": {
+						"type": "string"
+					}
+				},
+				"variables": {
+					"jobStatus": {
+						"type": "String",
+						"defaultValue": "Running"
+					}
+				},
+				"annotations": [],
+				"lastPublishTime": "2023-01-23T21:47:16Z"
+			},
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Run Job DLT')]",
@@ -1113,7 +1309,7 @@
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "Execute Databricks Job",
+							"referenceName": "Execute Run Job DLT",
 							"type": "PipelineReference"
 						},
 						"parameters": {}
@@ -1130,7 +1326,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/Execute Databricks Job')]"
+				"[concat(variables('factoryId'), '/pipelines/Execute Run Job DLT')]"
 			]
 		}
 	]
