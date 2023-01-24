@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "Run Job",
+						"referenceName": "Run Job DLT",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true,
