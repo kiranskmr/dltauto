@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "kiransreekumar-df"
 		},
+		"AzureDB_properties_typeProperties_existingClusterId": {
+			"value": "0124-163847-f7i71lvo"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://dltstoragehk.dfs.core.windows.net/"
 		},

@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "kiransreekumar-df"
 		},
+		"AzureDB_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0124-163847-f7i71lvo"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://dltstoragehk.dfs.core.windows.net/"
@@ -41,6 +45,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureDB_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDB_properties_typeProperties_existingClusterId')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
