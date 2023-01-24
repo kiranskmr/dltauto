@@ -33,7 +33,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
-								"referenceName": "Run Job",
+								"referenceName": "Run Job DLT",
 								"type": "PipelineReference"
 							},
 							"waitOnCompletion": true,
@@ -53,11 +53,11 @@
 				"lastPublishTime": "2023-01-24T12:54:59Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/Run Job')]"
+				"[concat(variables('factoryId'), '/pipelines/Run Job DLT')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Run Job')]",
+			"name": "[concat(parameters('factoryName'), '/Run Job DLT')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
