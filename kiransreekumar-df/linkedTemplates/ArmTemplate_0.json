@@ -960,7 +960,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "table1",
+						"name": "table 1",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
