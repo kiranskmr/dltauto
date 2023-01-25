@@ -1,5 +1,5 @@
 {
-	"name": "Execute Databricks Job",
+	"name": "Execute Run Job DLT",
 	"properties": {
 		"activities": [
 			{
