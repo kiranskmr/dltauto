@@ -26,6 +26,25 @@
 					"referenceName": "AzureDB",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Register Source",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Register Source').output.runOutput. job_id",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"annotations": []
