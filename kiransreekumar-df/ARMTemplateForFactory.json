@@ -73,7 +73,7 @@
 						"typeProperties": {
 							"notebookPath": "/Users/kiran.sreekumar@databricks.com/hei/fetch_jobID",
 							"baseParameters": {
-								"system": "ecc14"
+								"system": "ecc10"
 							}
 						},
 						"linkedServiceName": {
@@ -116,7 +116,7 @@
 							"notebookPath": "/Users/kiran.sreekumar@databricks.com/hei/dlt_api",
 							"baseParameters": {
 								"configlocation": "/Workspace/Repos/kiran.sreekumar@databricks.com/dltauto/metadata/metadataecc14.yaml",
-								"system": "ecc14",
+								"system": "ecc10",
 								"pool": "1207-120054-bean4-pool-eoo0gntr"
 							}
 						},
