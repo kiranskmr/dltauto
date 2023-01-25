@@ -26,26 +26,6 @@
 					"referenceName": "AzureDB",
 					"type": "LinkedServiceReference"
 				}
-			},
-			{
-				"name": "Execute Run Job DLT",
-				"type": "ExecutePipeline",
-				"dependsOn": [
-					{
-						"activity": "Register Source",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"pipeline": {
-						"referenceName": "Execute Run Job DLT",
-						"type": "PipelineReference"
-					},
-					"waitOnCompletion": true
-				}
 			}
 		],
 		"annotations": []
