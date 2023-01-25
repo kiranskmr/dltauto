@@ -229,7 +229,7 @@
 							{
 								"activity": "Fetch jobID",
 								"dependencyConditions": [
-									"Skipped"
+									"Succeeded"
 								]
 							}
 						],
