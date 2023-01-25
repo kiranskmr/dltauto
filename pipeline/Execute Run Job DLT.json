@@ -14,7 +14,7 @@
 					},
 					"waitOnCompletion": true,
 					"parameters": {
-						"jobId": "796104578175513",
+						"jobId": "@activity('Register Source').output.runOutput.hello",
 						"DatabricksWorkspaceID": "adb-984752964297111.11",
 						"WaitSeconds": 30
 					}
