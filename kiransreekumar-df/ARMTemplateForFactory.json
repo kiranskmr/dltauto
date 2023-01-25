@@ -33,14 +33,7 @@
 					{
 						"name": "Execute Pipeline1",
 						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "Register Source",
-								"dependencyConditions": [
-									"Skipped"
-								]
-							}
-						],
+						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
@@ -50,26 +43,12 @@
 							"waitOnCompletion": true,
 							"parameters": {
 								"jobId": {
-									"value": "@activity('Register Source').output.runOutput.hello",
+									"value": "796104578175513",
 									"type": "Expression"
 								},
 								"DatabricksWorkspaceID": "adb-984752964297111.11",
 								"WaitSeconds": 30
 							}
-						}
-					},
-					{
-						"name": "Register Source",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "Register Source",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {}
 						}
 					}
 				],
@@ -81,8 +60,7 @@
 				"lastPublishTime": "2023-01-24T12:54:59Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/Run Job DLT')]",
-				"[concat(variables('factoryId'), '/pipelines/Register Source')]"
+				"[concat(variables('factoryId'), '/pipelines/Run Job DLT')]"
 			]
 		},
 		{
