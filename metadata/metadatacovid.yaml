@@ -83,15 +83,6 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: kff_hcp_capacity
-    sourcepath: abfss://kff-hcp-capacity@coviddatadlt.dfs.core.windows.net/
-    target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
-    target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
-    keyfields: ['']
-    sequenceby: ''
-    pool: large
-  - system: covid_dataset
     tablename: kff_us_icu_beds
     sourcepath: abfss://kff-us-icu-beds@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
@@ -148,15 +139,6 @@
   - system: covid_dataset
     tablename: pcm_dps_covid19
     sourcepath: abfss://pcm-dps-covid19@coviddatadlt.dfs.core.windows.net/
-    target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
-    target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
-    keyfields: ['']
-    sequenceby: ''
-    pool: small
-  - system: covid_dataset
-    tablename: pcm_dps_covid19_details
-    sourcepath: abfss://pcm-dps-covid19-details@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
     fullload: true
