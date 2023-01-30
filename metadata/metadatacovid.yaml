@@ -2,7 +2,7 @@
 # Comments start with #
 ---
   - system: covid_dataset
-    tablename: ct-uc-covid-test
+    tablename: ct_uc_covid_test
     sourcepath: abfss://ct-uc-covid-tests@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -10,8 +10,8 @@
     keyfields: ['']
     sequenceby: ''
     pool: small
-  - system: covid_dataset
-    tablename: databank-demographics
+  _ system: covid_dataset
+    tablename: databank_demographics
     sourcepath: abfss://databank-demographics@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -20,7 +20,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: goog-global-mobility-report
+    tablename: goog_global_mobility_report
     sourcepath: abfss://goog-global-mobility-report@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -29,7 +29,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: hdx-acaps
+    tablename: hdx_acaps
     sourcepath: abfss://hdx-acaps@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -38,7 +38,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: hs-bulk-data
+    tablename: hs_bulk_data
     sourcepath: abfss://hs-bulk-data@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -47,7 +47,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: hum-restrictions-airline
+    tablename: hum_restrictions_airline
     sourcepath: abfss://hum-restrictions-airline@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -56,7 +56,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: hum-restrictions-country
+    tablename: hum_restrictions_country
     sourcepath: abfss://hum-restrictions-country@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -65,7 +65,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: ihme-covid-19
+    tablename: ihme_covid_19
     sourcepath: abfss://ihme-covid-19@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -74,7 +74,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: jhu-covid-19
+    tablename: jhu_covid_19
     sourcepath: abfss://jhu-covid-19@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -83,7 +83,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: kff-hcp-capacity
+    tablename: kff_hcp_capacity
     sourcepath: abfss://kff-hcp-capacity@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -92,7 +92,7 @@
     sequenceby: ''
     pool: large
   - system: covid_dataset
-    tablename: kff-us-icu-beds
+    tablename: kff_us_icu_beds
     sourcepath: abfss://kff-us-icu-beds@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -101,7 +101,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: kff-us-policy-actions
+    tablename: kff_us_policy_actions
     sourcepath: abfss://kff-us-policy-actions@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -110,7 +110,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: kff-us-state-mitigations
+    tablename: kff_us_state_mitigations
     sourcepath: abfss://kff-us-state-mitigations@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -128,7 +128,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: nyc-health-tests
+    tablename: nyc_health_tests
     sourcepath: abfss://nyc-health-tests@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -137,7 +137,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: nyt-us-covid19
+    tablename: nyt_us_covid19
     sourcepath: abfss://nyt-us-covid19@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -146,7 +146,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: pcm-dps-covid19
+    tablename: pcm_dps_covid19
     sourcepath: abfss://pcm-dps-covid19@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -155,7 +155,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: pcm-dps-covid19-details
+    tablename: pcm_dps_covid19_details
     sourcepath: abfss://pcm-dps-covid19-details@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -164,7 +164,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: rki-ger-covid19-dashboard
+    tablename: rki_ger_covid19_dashboard
     sourcepath: abfss://rki-ger-covid19-dashboard@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -173,7 +173,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: scs-be-detailed-hospitalisations
+    tablename: scs_be_detailed_hospitalisations
     sourcepath: abfss://scs-be-detailed-hospitalisations@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -182,7 +182,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: scs-be-detailed-mortality
+    tablename: scs_be_detailed_mortality
     sourcepath: abfss://scs-be-detailed-mortality@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -191,7 +191,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: scs-be-detailed-province-case-counts
+    tablename: scs_be_detailed_province_case_counts
     sourcepath: abfss://scs-be-detailed-province-case-counts@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -200,7 +200,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: scs-be-detailed-tests
+    tablename: scs_be_detailed_tests
     sourcepath: abfss://scs-be-detailed-tests@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
@@ -209,7 +209,7 @@
     sequenceby: ''
     pool: small
   - system: covid_dataset
-    tablename: who-situation-reports
+    tablename: who_situation_reports
     sourcepath: abfss://who-situation-reports@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
