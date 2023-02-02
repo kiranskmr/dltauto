@@ -6,7 +6,7 @@
     sourcepath: abfss://ct-uc-covid-tests@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: false
+    fullload: n
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -15,7 +15,7 @@
     sourcepath: abfss://databank-demographics@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: false
+    fullload: n
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -24,7 +24,7 @@
     sourcepath: abfss://goog-global-mobility-report@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -33,7 +33,7 @@
     sourcepath: abfss://hdx-acaps@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -42,7 +42,7 @@
     sourcepath: abfss://hs-bulk-data@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -51,7 +51,7 @@
     sourcepath: abfss://hum-restrictions-airline@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -60,7 +60,7 @@
     sourcepath: abfss://hum-restrictions-country@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -69,7 +69,7 @@
     sourcepath: abfss://ihme-covid-19@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -78,7 +78,7 @@
     sourcepath: abfss://jhu-covid-19@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -87,7 +87,7 @@
     sourcepath: abfss://kff-us-icu-beds@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -96,7 +96,7 @@
     sourcepath: abfss://metadata@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -105,7 +105,7 @@
     sourcepath: abfss://nyc-health-tests@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -114,7 +114,7 @@
     sourcepath: abfss://nyt-us-covid19@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -123,7 +123,7 @@
     sourcepath: abfss://pcm-dps-covid19@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -132,7 +132,7 @@
     sourcepath: abfss://rki-ger-covid19-dashboard@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -141,7 +141,7 @@
     sourcepath: abfss://scs-be-detailed-hospitalisations@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -150,7 +150,7 @@
     sourcepath: abfss://scs-be-detailed-mortality@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -159,7 +159,7 @@
     sourcepath: abfss://scs-be-detailed-province-case-counts@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -168,7 +168,7 @@
     sourcepath: abfss://scs-be-detailed-tests@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
@@ -177,7 +177,7 @@
     sourcepath: abfss://who-situation-reports@coviddatadlt.dfs.core.windows.net/
     target_bronze: abfss://bronze@coviddatadlt.dfs.core.windows.net/
     target_silver: abfss://silver@coviddatadlt.dfs.core.windows.net/
-    fullload: true
+    fullload: y
     keyfields: ['']
     sequenceby: ''
     pool: small
