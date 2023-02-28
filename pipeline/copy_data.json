@@ -51,7 +51,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "table1",
+						"referenceName": "table1_bkp",
 						"type": "DatasetReference"
 					}
 				]
@@ -105,7 +105,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "table2",
+						"referenceName": "table2_bkp",
 						"type": "DatasetReference"
 					}
 				]
@@ -159,7 +159,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "table3",
+						"referenceName": "table3_bkp",
 						"type": "DatasetReference"
 					}
 				]
@@ -213,7 +213,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "table4",
+						"referenceName": "table4_bkp",
 						"type": "DatasetReference"
 					}
 				]
