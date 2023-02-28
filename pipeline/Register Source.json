@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Register Source",
+				"name": "Register Sources",
 				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
