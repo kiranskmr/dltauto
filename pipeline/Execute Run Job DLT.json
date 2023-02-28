@@ -7,7 +7,7 @@
 				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
-						"activity": "Fetch jobID",
+						"activity": "Fetch jobID ",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -31,7 +31,7 @@
 				}
 			},
 			{
-				"name": "Fetch jobID",
+				"name": "Fetch jobID ",
 				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
