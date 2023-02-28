@@ -22,7 +22,7 @@
 					"waitOnCompletion": true,
 					"parameters": {
 						"jobId": {
-							"value": "@activity('Fetch jobID').output.runOutput",
+							"value": "@activity('Fetch jobID ').output.runOutput",
 							"type": "Expression"
 						},
 						"DatabricksWorkspaceID": "adb-984752964297111.11",
