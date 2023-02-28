@@ -18,6 +18,10 @@
 		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
 			"type": "string",
 			"defaultValue": "0124-163847-f7i71lvo"
+		},
+		"trigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/3f2e4d32-8e8d-46d6-82bc-5bb8d962328b/resourceGroups/kiran-azure-devops-rg/providers/Microsoft.Storage/storageAccounts/dltstoragehk"
 		}
 	},
 	"variables": {
@@ -865,30 +869,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Source_bkp')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Binary",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": "On_Time_Reporting_Carrier.csv",
-						"fileSystem": "tempdata"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/table1')]",
+			"name": "[concat(parameters('factoryName'), '/table1_t')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -915,7 +896,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/table1_bkp')]",
+			"name": "[concat(parameters('factoryName'), '/tableone')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -942,7 +923,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/table2')]",
+			"name": "[concat(parameters('factoryName'), '/table2_t')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -969,7 +950,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/table2_bkp')]",
+			"name": "[concat(parameters('factoryName'), '/tabletwo')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -996,7 +977,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/table3')]",
+			"name": "[concat(parameters('factoryName'), '/table3_t')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1023,7 +1004,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/table3_bkp')]",
+			"name": "[concat(parameters('factoryName'), '/tablethree')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1050,7 +1031,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/table4')]",
+			"name": "[concat(parameters('factoryName'), '/table4_t')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1077,7 +1058,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/table4_bkp')]",
+			"name": "[concat(parameters('factoryName'), '/tablefour')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1159,7 +1140,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "table1_bkp",
+								"referenceName": "tableone",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1215,7 +1196,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "table2_bkp",
+								"referenceName": "tabletwo",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1271,7 +1252,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "table3_bkp",
+								"referenceName": "tablethree",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1327,7 +1308,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "table4_bkp",
+								"referenceName": "tablefour",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -1343,10 +1324,40 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Source')]",
-				"[concat(variables('factoryId'), '/datasets/table1_bkp')]",
-				"[concat(variables('factoryId'), '/datasets/table2_bkp')]",
-				"[concat(variables('factoryId'), '/datasets/table3_bkp')]",
-				"[concat(variables('factoryId'), '/datasets/table4_bkp')]"
+				"[concat(variables('factoryId'), '/datasets/tableone')]",
+				"[concat(variables('factoryId'), '/datasets/tabletwo')]",
+				"[concat(variables('factoryId'), '/datasets/tablethree')]",
+				"[concat(variables('factoryId'), '/datasets/tablefour')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "Execute Run Job DLT",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/ecc14/blobs/table4",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('trigger_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/Execute Run Job DLT')]"
 			]
 		}
 	]
