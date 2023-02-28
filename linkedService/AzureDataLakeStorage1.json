@@ -5,7 +5,8 @@
 		"type": "AzureBlobFS",
 		"typeProperties": {
 			"url": "https://dltstoragehk.dfs.core.windows.net/"
-		}
+		},
+		"description": "ttt"
 	},
 	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
