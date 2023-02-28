@@ -19,7 +19,7 @@
 			"type": "string",
 			"defaultValue": "0124-163847-f7i71lvo"
 		},
-		"trigger1_properties_typeProperties_scope": {
+		"trigger_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/3f2e4d32-8e8d-46d6-82bc-5bb8d962328b/resourceGroups/kiran-azure-devops-rg/providers/Microsoft.Storage/storageAccounts/dltstoragehk"
 		}
@@ -1354,7 +1354,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"name": "[concat(parameters('factoryName'), '/trigger')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1373,7 +1373,7 @@
 				"typeProperties": {
 					"blobPathBeginsWith": "/ecc14/blobs/table4",
 					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('trigger1_properties_typeProperties_scope')]",
+					"scope": "[parameters('trigger_properties_typeProperties_scope')]",
 					"events": [
 						"Microsoft.Storage.BlobCreated"
 					]
