@@ -45,7 +45,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Source",
+						"referenceName": "Binary1",
 						"type": "DatasetReference"
 					}
 				],
