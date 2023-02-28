@@ -1,5 +1,5 @@
 {
-	"name": "Binary1",
+	"name": "Source",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
@@ -14,5 +14,6 @@
 				"fileSystem": "tempdata"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
