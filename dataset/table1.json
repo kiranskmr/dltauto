@@ -1,5 +1,5 @@
 {
-	"name": "table1",
+	"name": "table1_bkp",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
