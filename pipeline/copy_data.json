@@ -99,13 +99,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Source",
+						"referenceName": "Binary1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "table2",
+						"referenceName": "table2_copy1",
 						"type": "DatasetReference"
 					}
 				]
@@ -153,13 +153,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Source",
+						"referenceName": "Binary1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "table3",
+						"referenceName": "table3_copy1",
 						"type": "DatasetReference"
 					}
 				]
@@ -207,13 +207,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Source",
+						"referenceName": "Binary1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "table4",
+						"referenceName": "table4_copy1",
 						"type": "DatasetReference"
 					}
 				]
