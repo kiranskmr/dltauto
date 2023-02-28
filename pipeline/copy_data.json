@@ -24,14 +24,31 @@
 					}
 				],
 				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
 					"sink": {
 						"type": "BinarySink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"validateDataConsistency": false
 				},
+				"inputs": [
+					{
+						"referenceName": "Source",
+						"type": "DatasetReference"
+					}
+				],
 				"outputs": [
 					{
 						"referenceName": "table1",
@@ -61,14 +78,31 @@
 					}
 				],
 				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
 					"sink": {
 						"type": "BinarySink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"validateDataConsistency": false
 				},
+				"inputs": [
+					{
+						"referenceName": "Source",
+						"type": "DatasetReference"
+					}
+				],
 				"outputs": [
 					{
 						"referenceName": "table2",
@@ -114,8 +148,15 @@
 							"type": "AzureBlobFSWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"validateDataConsistency": false
 				},
+				"inputs": [
+					{
+						"referenceName": "Source",
+						"type": "DatasetReference"
+					}
+				],
 				"outputs": [
 					{
 						"referenceName": "table3",
@@ -161,8 +202,15 @@
 							"type": "AzureBlobFSWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"validateDataConsistency": false
 				},
+				"inputs": [
+					{
+						"referenceName": "Source",
+						"type": "DatasetReference"
+					}
+				],
 				"outputs": [
 					{
 						"referenceName": "table4",
