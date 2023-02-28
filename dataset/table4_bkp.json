@@ -1,5 +1,5 @@
 {
-	"name": "table2_copy1",
+	"name": "table4",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
@@ -14,7 +14,7 @@
 					"value": "@concat(replace('On_Time_Reporting_Carrier','.csv',''), '_', formatDateTime(convertTimeZone(utcnow(),'UTC','Eastern Standard Time'),'yyyy-MM-ddTHHmmss'), '.csv')\n",
 					"type": "Expression"
 				},
-				"folderPath": "table2",
+				"folderPath": "table4",
 				"fileSystem": "ecc14"
 			}
 		}
