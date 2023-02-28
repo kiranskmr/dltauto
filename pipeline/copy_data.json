@@ -51,7 +51,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "table1",
+						"referenceName": "tableone",
 						"type": "DatasetReference"
 					}
 				]
@@ -105,7 +105,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "table2",
+						"referenceName": "tabletwo",
 						"type": "DatasetReference"
 					}
 				]
@@ -159,7 +159,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "table3",
+						"referenceName": "tablethree",
 						"type": "DatasetReference"
 					}
 				]
@@ -213,7 +213,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "table4",
+						"referenceName": "tablefour",
 						"type": "DatasetReference"
 					}
 				]

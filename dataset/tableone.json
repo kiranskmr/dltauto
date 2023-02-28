@@ -1,5 +1,5 @@
 {
-	"name": "table1",
+	"name": "tableone",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
