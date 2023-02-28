@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Execute Jobs API",
+				"name": "Execute Job API",
 				"type": "WebActivity",
 				"dependsOn": [],
 				"policy": {
@@ -35,7 +35,7 @@
 				"type": "Until",
 				"dependsOn": [
 					{
-						"activity": "Execute Jobs API",
+						"activity": "Execute Job API",
 						"dependencyConditions": [
 							"Succeeded"
 						]
