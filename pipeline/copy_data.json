@@ -51,7 +51,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "table1",
+						"referenceName": "table1_copy1",
 						"type": "DatasetReference"
 					}
 				]
