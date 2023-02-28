@@ -7,7 +7,7 @@
 				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
-						"activity": "Fetch jobID ",
+						"activity": "Fetch jobID",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -22,7 +22,7 @@
 					"waitOnCompletion": true,
 					"parameters": {
 						"jobId": {
-							"value": "@activity('Fetch jobID ').output.runOutput",
+							"value": "@activity('Fetch jobID').output.runOutput",
 							"type": "Expression"
 						},
 						"DatabricksWorkspaceID": "adb-984752964297111.11",
@@ -31,7 +31,7 @@
 				}
 			},
 			{
-				"name": "Fetch jobID ",
+				"name": "Fetch jobID",
 				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
