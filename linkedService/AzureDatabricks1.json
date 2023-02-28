@@ -7,14 +7,7 @@
 			"domain": "https://adb-984752964297111.11.azuredatabricks.net",
 			"authentication": "MSI",
 			"workspaceResourceId": "/subscriptions/3f2e4d32-8e8d-46d6-82bc-5bb8d962328b/resourceGroups/field-eng-east/providers/Microsoft.Databricks/workspaces/field-eng-east",
-			"newClusterNodeType": "Standard_DS3_v2",
-			"newClusterNumOfWorker": "1",
-			"newClusterSparkEnvVars": {
-				"PYSPARK_PYTHON": "/databricks/python3/bin/python3"
-			},
-			"newClusterVersion": "11.3.x-scala2.12",
-			"newClusterInitScripts": [],
-			"clusterOption": "Fixed"
+			"existingClusterId": "0124-163847-f7i71lvo"
 		}
 	}
 }
