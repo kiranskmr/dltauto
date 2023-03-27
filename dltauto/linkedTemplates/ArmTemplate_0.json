@@ -329,8 +329,8 @@
 						"typeProperties": {
 							"notebookPath": "/Users/kiran.sreekumar@databricks.com/hei/dlt_api",
 							"baseParameters": {
-								"configlocation": "/Workspace/Repos/kiran.sreekumar@databricks.com/dltauto/metadata/metadataecc14.yaml",
-								"system": "ecc14",
+								"configlocation": "/Workspace/Repos/kiran.sreekumar@databricks.com/dltauto/metadata/metadataecc10.yaml",
+								"system": "ecc10",
 								"pool": "1207-120054-bean4-pool-eoo0gntr",
 								"host": "https://adb-984752964297111.11.azuredatabricks.net/"
 							}
@@ -869,6 +869,33 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/tablefour')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat(replace('On_Time_Reporting_Carrier','.csv',''), '_', formatDateTime(convertTimeZone(utcnow(),'UTC','Eastern Standard Time'),'yyyy-MM-ddTHHmmss'), '.csv')\n",
+							"type": "Expression"
+						},
+						"folderPath": "table4",
+						"fileSystem": "ecc14"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/tableone')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -887,33 +914,6 @@
 							"type": "Expression"
 						},
 						"folderPath": "table1",
-						"fileSystem": "ecc14"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/tabletwo')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Binary",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@concat(replace('On_Time_Reporting_Carrier','.csv',''), '_', formatDateTime(convertTimeZone(utcnow(),'UTC','Eastern Standard Time'),'yyyy-MM-ddTHHmmss'), '.csv')\n",
-							"type": "Expression"
-						},
-						"folderPath": "table2",
 						"fileSystem": "ecc14"
 					}
 				}
@@ -950,7 +950,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/tablefour')]",
+			"name": "[concat(parameters('factoryName'), '/tabletwo')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -967,7 +967,7 @@
 							"value": "@concat(replace('On_Time_Reporting_Carrier','.csv',''), '_', formatDateTime(convertTimeZone(utcnow(),'UTC','Eastern Standard Time'),'yyyy-MM-ddTHHmmss'), '.csv')\n",
 							"type": "Expression"
 						},
-						"folderPath": "table4",
+						"folderPath": "table2",
 						"fileSystem": "ecc14"
 					}
 				}
